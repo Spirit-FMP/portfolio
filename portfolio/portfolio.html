@@ -7,24 +7,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --surface: #1a1410;
-      --surface2: #231a13;
-      --border: #362a1e;
-      --accent: #f5a623;
-      --accent2: #ff7043;
-      --text: #f2ece4;
-      --muted: #9a8472;
+      --surface: #f7f5f2;
+      --surface2: #eeebe6;
+      --border: #d8d0c8;
+      --accent: #c8860a;
+      --accent2: #e05525;
+      --text: #1a1410;
+      --muted: #5a4e44;
       --font-head: 'Playfair Display', serif;
       --font-body: 'Inter', sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: linear-gradient(to bottom, #ffffff 0%, #2a2a2a 40%, #0f0b08 100%);
+      background: #ffffff;
       min-height: 100vh;
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -48,9 +48,9 @@
     }
     .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: #b07d20; }
     .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 5rem; align-items: center; }
-    .hero-title { font-family: var(--font-head); font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.4rem; color: #111; }
+    .hero-title { font-family: var(--font-head); font-size: clamp(3rem, 5vw, 4.4rem); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.4rem; color: #111; }
     .hero-title span { color: var(--accent); }
-    .hero-text { color: #555; font-size: 1.05rem; font-weight: 300; max-width: 520px; margin-bottom: 1rem; }
+    .hero-text { color: #444; font-size: 1.12rem; font-weight: 300; max-width: 520px; margin-bottom: 1rem; }
     .hero-text strong { color: #222; font-weight: 500; }
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
     .cv-btn {
@@ -78,7 +78,7 @@
     }
     .photo-placeholder img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
     .formation-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      background: #3a3330; border: 1px solid #4e4540; border-radius: 12px;
       padding: 2.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem;
       align-items: start; transition: border-color 0.3s;
     }
@@ -88,10 +88,10 @@
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
       padding: 0.3rem 0.8rem; border-radius: 100px; margin-bottom: 1rem;
     }
-    .formation-title { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; }
-    .formation-desc { color: var(--muted); font-size: 0.97rem; max-width: 560px; }
+    .formation-title { font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.8rem; color: #f2ece4; }
+    .formation-desc { color: #9a8472; font-size: 1.02rem; max-width: 560px; }
     .formation-meta { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
-    .meta-item { font-size: 0.82rem; color: var(--muted); }
+    .meta-item { font-size: 0.88rem; color: #9a8472; }
     .etab-img {
       margin-top: 1.5rem; width: 100%; height: 220px; border-radius: 8px; overflow: hidden;
       border: 1px solid var(--border); background: var(--surface2);
@@ -114,7 +114,7 @@
     }
     .modal-overlay.open { display: flex; }
     .modal {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      background: #ffffff; border: 1px solid var(--border); border-radius: 16px;
       max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto;
       padding: 2.5rem; position: relative; animation: slideUp 0.3s ease;
     }
@@ -126,9 +126,9 @@
       display: flex; align-items: center; justify-content: center; transition: color 0.2s;
     }
     .modal-close:hover { color: var(--text); }
-    .modal h2 { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; }
-    .modal .subtitle { color: var(--accent); font-size: 0.9rem; margin-bottom: 1.5rem; }
-    .modal p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    .modal h2 { font-family: var(--font-head); font-size: 1.7rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text); }
+    .modal .subtitle { color: var(--accent); font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .modal p { color: var(--muted); font-size: 1rem; margin-bottom: 1rem; }
     .modal p strong { color: var(--text); }
     .modal-section-title { font-family: var(--font-head); font-weight: 700; color: var(--text); margin: 1.5rem 0 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); font-size: 1rem; }
     .modal-section-title.big { font-size: 1.25rem; margin-top: 2rem; }
@@ -136,31 +136,31 @@
     .modal-tag { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; padding: 0.3rem 0.7rem; border-radius: 4px; }
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin-top: 0.5rem; }
     .skill-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      background: #3a3330; border: 1px solid #4e4540; border-radius: 10px;
       padding: 1.4rem; display: flex; flex-direction: column; gap: 0.6rem;
       transition: border-color 0.3s, transform 0.2s;
     }
     .skill-card:hover { border-color: var(--accent2); transform: translateY(-3px); }
     .skill-icon { width: 42px; height: 42px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; font-family: var(--font-head); color: var(--muted); }
-    .skill-name { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; }
+    .skill-name { font-family: var(--font-head); font-weight: 700; font-size: 1rem; color: #f2ece4; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
     .card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      background: #3a3330; border: 1px solid #4e4540; border-radius: 12px;
       padding: 1.6rem; transition: border-color 0.3s, transform 0.2s;
-      text-decoration: none; color: inherit; display: block;
+      text-decoration: none; color: #f2ece4; display: block;
     }
-    .card:hover { border-color: rgba(255,112,67,0.4); transform: translateY(-3px); }
+    .card:hover { border-color: rgba(255,112,67,0.6); transform: translateY(-3px); }
     .card-tag {
       display: inline-block; background: rgba(255,112,67,0.1); color: var(--accent2);
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
       padding: 0.2rem 0.6rem; border-radius: 100px; margin-bottom: 0.8rem;
     }
-    .card-tag.green { background: rgba(74,240,160,0.1); color: #4af0a0; }
-    .card-title { font-family: var(--font-head); font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.3; }
-    .card-desc { color: var(--muted); font-size: 0.88rem; }
-    .card-link { font-size: 0.8rem; color: var(--accent2); font-weight: 600; margin-top: 1rem; display: block; }
-    .card-date { font-size: 0.75rem; color: var(--muted); opacity: 0.5; margin-top: 1rem; }
-    footer { text-align: center; padding: 3rem 2rem; color: var(--muted); font-size: 0.85rem; }
+    .card-tag.green { background: rgba(0,160,90,0.1); color: #007a45; }
+    .card-title { font-family: var(--font-head); font-weight: 700; font-size: 1.07rem; margin-bottom: 0.5rem; line-height: 1.3; color: #f2ece4; }
+    .card-desc { color: #9a8472; font-size: 0.94rem; }
+    .card-link { font-size: 0.86rem; color: var(--accent2); font-weight: 600; margin-top: 1rem; display: block; }
+    .card-date { font-size: 0.8rem; color: #7a6a5a; opacity: 0.9; margin-top: 1rem; }
+    footer { text-align: center; padding: 3rem 2rem; color: var(--muted); font-size: 0.9rem; background: #f7f5f2; }
     footer span { color: var(--accent); }
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
@@ -201,14 +201,11 @@
         <p class="hero-text">
           J'ai décidé de suivre cette formation dans le but d'apprendre les subtilitées de l'informatique et pousser ma créativité dans l'optique de poursuivre mes étude dans la cybersécurité.
         </p>
-        <div class="btn-group">
-          <a href="https://www.canva.com/design/DAGbuQymG4k/8PPRTWEB6KQPfgZ7g-OIfA/view" target="_blank" class="cv-btn">CV</a>
-         
-        </div>
+       
       </div>
       <div class="photo-wrap">
         <div class="photo-placeholder">
-          <img src="img_face.jpg" />
+          <img src="img_face.jpg"/>
         </div>
       </div>
     </div>
@@ -220,23 +217,23 @@
 
     <!-- ETABLISSEMENT -->
     <div class="formation-card fade-in" style="margin-bottom:1.5rem;">
-      <div style="width:100%">
-        <div class="formation-badge">Etablissement</div>
-        <h2 class="formation-title">St Jo sup</h2>
-        <p class="formation-desc">
-            Unité pédagogique post-baccalauréat du lycée Saint-Joseph, Saint-Jo Sup accueille plus de 200 étudiants en plein centre-ville du Havre
-        </p>
-        <div class="etab-img">
-            <img src=" https://www.gralon.net/mairies-france/cartes/plan-association-bde-st-jo-sup-le-havre_W762005635.jpg" alt=" Etablissement" />
-       
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          
+        <div style="width:100%">
+            <div class="formation-badge">Etablissement</div>
+            <h2 class="formation-title">St Jo sup</h2>
+            <p class="formation-desc">
+                Unité pédagogique post-baccalauréat du lycée Saint-Joseph, Saint-Jo Sup accueille plus de 200 étudiants en plein centre-ville du Havre
+            </p>
+            <div class="etab-img">
+                <img src=" https://www.gralon.net/mairies-france/cartes/plan-association-bde-st-jo-sup-le-havre_W762005635.jpg" alt=" Etablissement" />
+
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <path d="M21 15l-5-5L5 21" />
+                </svg>
+            </div>
+            <button class="details-btn" onclick="stjo()">Voir l'établissement'</button>
         </div>
-      </div>
       <div class="formation-meta" style="min-width:140px;">
         <div class="meta-item">Le Havre</div>
       </div>
@@ -334,8 +331,61 @@
         <div class="skill-name">Git / GitHub</div>
       </div>
     </div>
+     <div class="cards-grid fade-in">
+          <a class="card" href="https://canva.link/bo7nrugzoi03azh" target="_blank" rel="noopener">
+              <div class="card-tag green">Grille de compétences</div>
+              <div class="card-title">Grille de compétences</div>
+              <span class="card-link">Voir grille</span>
+          </a>
+     </div>
   </section>
 
+  <!-- STAGES -->
+  <section id="stages">
+      <div class="section-label fade-in">stages</div>
+      <h2 class="fade-in" style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:2rem;">
+          Rapports de stage
+      </h2>
+      <div class="cards-grid fade-in">
+          <a class="card" href="https://docs.google.com/document/d/1YqbhuJEO2qfIwKf6KYkl16aKg29APdiPuuDBArz-dgk/edit?usp=sharing" target="_blank" rel="noopener">
+              <div class="card-tag green">Rapport de stage 2</div>
+              <div class="card-title">ADTS</div>
+              <div class="card-desc">Rapport du second stage réalisé dans le cadre du BTS SIO.</div>
+              <span class="card-link">Voir rapport</span>
+          </a>
+
+          <a class="card" href="https://docs.google.com/document/d/1c7YqUSkeJMaPFbx9Kb-Haw-CPBtX8ikdiGMJAejxYIs/edit?usp=sharing" target="_blank" rel="noopener">
+              <div class="card-tag green">Rapport de stage 1</div>
+              <div class="card-title">CU du Havre</div>
+              <div class="card-desc">Rapport du premier stage réalisé dans le cadre du BTS SIO.</div>
+              <span class="card-link">Voir rapport</span>
+          </a>
+      </div>
+
+
+      <h2 class="fade-in" style="font-family:var(--font-head);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:2rem;">
+          attestations
+      </h2>
+      <div class="cards-grid fade-in">
+          <a class="card" href="https://canva.link/2mba1ovxr6dtt3h" target="_blank" rel="noopener">
+              <div class="card-tag green">attestation de stage 2</div>
+              <div class="card-title">ADTS</div>
+              <div class="card-desc">attestation du second stage dans le cadre du BTS SIO.</div>
+              <span class="card-link">Voir attestation</span>
+          </a>
+
+          <a class="card" href="https://canva.link/fbz7qj345170v7z" target="_blank" rel="noopener">
+              <div class="card-tag green">attestation de stage 1</div>
+              <div class="card-title">CU du Havre</div>
+              <div class="card-desc">attestation du premier stage dans le cadre du BTS SIO.</div>
+              <span class="card-link">Voir attestation</span>
+          </a>
+
+
+      </div>
+
+
+  </section>
   <!-- PROJETS -->
   <section id="projets">
     <div class="section-label fade-in">Projets</div>
@@ -346,7 +396,7 @@
       <a class="card" href="https://github.com/Spirit-FMP/projet2" target="_blank" rel="noopener">
         <div class="card-tag green">Projet 1</div>
         <div class="card-title">projet BTS 2</div>
-        <div class="card-desc">Ce projet permet de créer des Cvs à l'aide de blocks à la méthode de canva.</div>
+        <div class="card-desc">Ce projet permet de créer des fichier comme des CVs à l'aide de blocks à la méthode de canva.</div>
         <span class="card-link">Voir sur GitHub</span>
       </a>
       
@@ -425,7 +475,11 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+      function stjo() {
+          window.location = "https://sup.st-jo.fr"
+      }
   </script>
 </body>
 </html>
